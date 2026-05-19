@@ -7,7 +7,6 @@
 #include <dispatch/dispatch.h>
 #include "log.h"
 
-#ifdef ENABLE_LOGS
 
 bool debugLogsEnabled = true;
 bool errorLogsEnabled = true;
@@ -132,5 +131,3 @@ void JBLogErrorFunction(const char *format, ...) {
     
     va_end(va);
 }
-
-#endif // ENABLE_LOGS
