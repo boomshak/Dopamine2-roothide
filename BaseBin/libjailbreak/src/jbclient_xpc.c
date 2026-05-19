@@ -10,12 +10,10 @@
 #include <os/alloc_once_private.h>
 
 #include "roothider/log.h"
-#ifdef ENABLE_LOGS
 void (*XPCLogDebugFunction)(const char *format, ...);
 void (*XPCLogErrorFunction)(const char *format, ...);
 #define JBLogDebug(...) do { if(XPCLogDebugFunction)XPCLogDebugFunction(__VA_ARGS__); } while(0)
 #define JBLogError(...) do { if(XPCLogErrorFunction)XPCLogErrorFunction(__VA_ARGS__); } while(0)
-#endif
 
 struct xpc_global_data {
 	uint64_t    a;
