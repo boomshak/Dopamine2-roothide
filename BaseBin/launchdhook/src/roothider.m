@@ -88,9 +88,7 @@ void roothide_launchd_preinit()
 {
 	JBLogDebug("roothide_launchd_preinit");
 
-#ifdef ENABLE_LOGS
 	enableJBDLog(JBLogDebugFunction, JBLogErrorFunction);
-#endif
 
 	exec_set_patch(false);
 }
@@ -341,9 +339,7 @@ int roothide_launchd___posix_spawn_prehook(pid_t *restrict pidp, const char *res
 		/* if the jailbreak activation is interrupted for some reason, 
 			we prevent the app from relaunching to prevent the system from being in an unknown state */
 		if(launchdhookFirstLoad) {
-#ifdef ENABLE_LOGS
 			launchd_panic("reboot device due to jailbreak failure!");
-#endif
 			return EPERM;
 		}
 
