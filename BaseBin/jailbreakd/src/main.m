@@ -29,10 +29,8 @@ int main(int argc, char* argv[])
 
 	setJetsamLimit(50, false);
 
-#ifdef ENABLE_LOGS
 	enableXPCLog(JBLogDebugFunction, JBLogErrorFunction);
 	enableJBDLog(JBLogDebugFunction, JBLogErrorFunction);
-#endif
 
 	JBLogDebug("Hello from jailbrakd! uid=%d pid=%d ppid=%d", getuid(), getpid(), getppid());
 
