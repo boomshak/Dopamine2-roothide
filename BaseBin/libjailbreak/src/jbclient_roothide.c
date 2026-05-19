@@ -6,7 +6,6 @@
 #include "roothider/log.h"
 #include "roothider/xpc_private.h"
 
-#ifdef ENABLE_LOGS
 void (*XPCLogDebugFunction)(const char *format, ...);
 void (*XPCLogErrorFunction)(const char *format, ...);
 
@@ -18,7 +17,6 @@ void enableXPCLog(void* debugLog, void* errorLog)
 	XPCLogDebugFunction = debugLog;
 	XPCLogErrorFunction = errorLog;
 }
-#endif
 
 mach_port_t jbclient_jailbreakd_lookup()
 {
